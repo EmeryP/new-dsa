@@ -42,7 +42,7 @@
   * Remove element from array
   * Store index of element in secondary array
   * Break down an array or string into an object and instead of using nested loops you can then use loops to simply compare the two objects
-  * Below is an example of using a frequency counter method to compare the values and frequency of values in arr1 to arr2. O(n) solution for time.
+* Below is an example of using a frequency counter method to compare the values and frequency of values in arr1 to arr2. O(n) solution for time.
 
 ```
 function compareArr(arr1, arr2) {
@@ -72,7 +72,7 @@ function compareArr(arr1, arr2) {
 
 compareArr([1,2,3,4], [16,4,9,1])
 ```
-* Code to check if string is angram using frequency counter method
+* Code to check if string is anagram using frequency counter method
 ```
 function isAnagram(str1, str2) {
 
