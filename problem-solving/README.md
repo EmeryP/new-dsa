@@ -38,6 +38,11 @@
 
 * [Frequency Counter](#FrequencyCounter)
 * [Multiple Pointers](#MultiplePointers)
+* [Sliding Windows](#SlidingWindows)
+* [Divide and Conquer](#DivideandConquer)
+* [Dynamic Programming](#DynamicProgramming)
+* [Greedy Algorithms](#GreedyAlgorithms)
+* [Backtracking](#Backtracking)
 
 ### FrequencyCounter
 * This pattern uses objects or sets to collect values/frequencies of values
@@ -146,9 +151,9 @@ function validAnagram(str1, str2){
 validAnagram('anagram', 'agaranr')
 ```
 ### MultiplePointers
-### Sliding Windows
-### Divide and Conquer
-### Dynamic Programming
-### Greedy Algorithms
+### SlidingWindows
+### DivideandConquer
+### DynamicProgramming
+### GreedyAlgorithms
 ### Backtracking
 
