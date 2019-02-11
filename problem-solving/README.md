@@ -36,7 +36,15 @@
 
 ## Problem Solving Patterns
 
-### Frequency Counter
+* [Frequency Counter](#FrequencyCounter)
+* [Multiple Pointers](#MultiplePointers)
+* [Sliding Windows](#SlidingWindows)
+* [Divide and Conquer](#DivideandConquer)
+* [Dynamic Programming](#DynamicProgramming)
+* [Greedy Algorithms](#GreedyAlgorithms)
+* [Backtracking](#Backtracking)
+
+### FrequencyCounter
 * This pattern uses objects or sets to collect values/frequencies of values
 * Operations to handle frequencies of values in arrays
   * Remove element from array
@@ -72,7 +80,7 @@ function compareArr(arr1, arr2) {
 
 compareArr([1,2,3,4], [16,4,9,1])
 ```
-* Code to check if string is anagram using frequency counter method
+Code to check if string is anagram using frequency counter method
 ```
 function isAnagram(str1, str2) {
 
@@ -113,10 +121,39 @@ isAnagram('carr', 'rca')  //false scenario
 isAnagram('carr', 'rcat')  //false scenario
 isAnagram('carr', 'rcar')  //true scenario
 ```
-### Multiple Pointers
-### Sliding Windows
-### Divide and Conquer
-### Dynamic Programming
-### Greedy Algorithms
+
+Another solution to the anagram problem above
+
+```
+function validAnagram(str1, str2){
+
+  if(str1.length !== str2.length){
+    return false
+  }
+
+  const storage = {};
+
+  for(let i = 0; i < str1.length; i++){
+    let letter = str1[i];
+    storage[letter] ? storage[letter] += 1 : storage[letter] = 1;
+  }
+  for(let i = 0; i < str2.length; i++){
+    let letter = str2[i]
+    if(!storage[letter]){
+      return false;
+    } else {
+    storage[letter] -= 1;
+    }
+  }
+  return true;
+}
+
+validAnagram('anagram', 'agaranr')
+```
+### MultiplePointers
+### SlidingWindows
+### DivideandConquer
+### DynamicProgramming
+### GreedyAlgorithms
 ### Backtracking
 
