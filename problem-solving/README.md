@@ -36,7 +36,10 @@
 
 ## Problem Solving Patterns
 
-### Frequency Counter
+* [Frequency Counter](#FrequencyCounter)
+* [Multiple Pointers](#MultiplePointers)
+
+### FrequencyCounter
 * This pattern uses objects or sets to collect values/frequencies of values
 * Operations to handle frequencies of values in arrays
   * Remove element from array
@@ -142,7 +145,7 @@ function validAnagram(str1, str2){
 
 validAnagram('anagram', 'agaranr')
 ```
-### Multiple Pointers
+### MultiplePointers
 ### Sliding Windows
 ### Divide and Conquer
 ### Dynamic Programming
