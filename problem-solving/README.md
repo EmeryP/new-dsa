@@ -72,7 +72,7 @@ function compareArr(arr1, arr2) {
 
 compareArr([1,2,3,4], [16,4,9,1])
 ```
-* Code to check if string is anagram using frequency counter method
+Code to check if string is anagram using frequency counter method
 ```
 function isAnagram(str1, str2) {
 
@@ -112,6 +112,35 @@ isAnagram('carr', 'rcac')  //false scenario
 isAnagram('carr', 'rca')  //false scenario
 isAnagram('carr', 'rcat')  //false scenario
 isAnagram('carr', 'rcar')  //true scenario
+```
+
+Another solution to the anagram problem above
+
+```
+function validAnagram(str1, str2){
+
+  if(str1.length !== str2.length){
+    return false
+  }
+
+  const storage = {};
+
+  for(let i = 0; i < str1.length; i++){
+    let letter = str1[i];
+    storage[letter] ? storage[letter] += 1 : storage[letter] = 1;
+  }
+  for(let i = 0; i < str2.length; i++){
+    let letter = str2[i]
+    if(!storage[letter]){
+      return false;
+    } else {
+    storage[letter] -= 1;
+    }
+  }
+  return true;
+}
+
+validAnagram('anagram', 'agaranr')
 ```
 ### Multiple Pointers
 ### Sliding Windows
