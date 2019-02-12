@@ -1,4 +1,4 @@
-# Problem Solving
+# ProblemSolving
 
 ## Devising a Plan
 
@@ -34,7 +34,7 @@
   * How have other people solved this problem?
 
 
-## Problem Solving Patterns
+## ProblemSolvingPatterns
 
 * [Frequency Counter](#FrequencyCounter)
 * [Multiple Pointers](#MultiplePointers)
@@ -50,7 +50,8 @@
   * Remove element from array
   * Store index of element in secondary array
   * Break down an array or string into an object and instead of using nested loops you can then use loops to simply compare the two objects
-* Below is an example of using a frequency counter method to compare the values and frequency of values in arr1 to arr2. O(n) solution for time.
+
+Below is an example of using a frequency counter method to compare the values and frequency of values in arr1 to arr2. BigO; Time: O(n).
 
 ```
 function compareArr(arr1, arr2) {
@@ -80,7 +81,7 @@ function compareArr(arr1, arr2) {
 
 compareArr([1,2,3,4], [16,4,9,1])
 ```
-Code to check if string is anagram using frequency counter method
+Below is code to check if string is anagram using frequency counter method 
 ```
 function isAnagram(str1, str2) {
 
@@ -122,7 +123,7 @@ isAnagram('carr', 'rcat')  //false scenario
 isAnagram('carr', 'rcar')  //true scenario
 ```
 
-Another solution to the anagram problem above
+Another solution... BigO; Time: O(n), Space: O(1)
 
 ```
 function validAnagram(str1, str2){
@@ -148,12 +149,85 @@ function validAnagram(str1, str2){
   return true;
 }
 
-validAnagram('anagram', 'agaranr')
+validAnagram('anagram', 'agaranm')
 ```
+[Jump to top](#ProblemSolvingPatterns)
+
 ### MultiplePointers
+* Creating pointers or values that correspond to an index or position and move toward the beginning, end or middle based on a certain condition. Very efficient for solving problems with minimal space complexity as well.
+* Good for...
+  * Array, string, linked lists (linear structures)
+
+Problem: return the two values in an array that sum to zero, else return false
+
+brute force solution... BigO; Time: O(n^2), Space: O(1)
+```
+function sumZero(array){
+  for(let i = 0; i < array.length; i++){
+    for(let j = i+1; j < array.length; j++){
+      if(array[j] + array[i] === 0){
+        return ([array[j], array[i]]) 
+      }
+    }
+  }
+}
+sumZero([-2,-1,0,1,2])
+```
+Refactored with multiple pointers method... BigO; Time: O(n), Space: O(1)
+```
+function sumZero(array){
+  
+  let left = 0;
+  let right = array.length - 1;
+  let sum = left + right;
+
+  while(left < right){
+  let sum = array[left] + array[right];
+    if(sum === 0){
+      return [array[left], array[right]]
+    }
+    if(sum < 0){
+      left ++;
+    } else {
+      right --;
+    } 
+  }
+  return 'zero pair doesnt exist in array';
+}
+
+sumZero([-4,-3,-2, -1, 0, 1, 2, 3, 4])
+```
+Count unique values with multiple pointers... BigO; Time: O(n), Space O(n)
+
+```
+function countUniqueValues(array) {
+  if(array.length === 0) return 0;
+    let i = 0;
+    for (let j = 1; j < array.length; j++) {
+      if (array[i] !== array[j]) {
+        i++
+        array[i] = array[j]
+      }
+    }
+  return i + 1
+}
+
+countUniqueValues([1,2,3,3,4,4,4,4,4,4,4,4,5,6,7,7])//7
+countUniqueValues([0]) //zero
+countUniqueValues([1,2,2,2,2]) //2
+countUniqueValues([-2,-1,0,1,2]) //5
+```
+
+[Jump to top](#ProblemSolvingPatterns)
+
 ### SlidingWindows
+[Jump to top](#ProblemSolvingPatterns)
 ### DivideandConquer
+[Jump to top](#ProblemSolvingPatterns)
 ### DynamicProgramming
+[Jump to top](#ProblemSolvingPatterns)
 ### GreedyAlgorithms
+[Jump to top](#ProblemSolvingPatterns)
 ### Backtracking
+[Jump to top](#ProblemSolvingPatterns)
 
