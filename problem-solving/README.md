@@ -158,9 +158,9 @@ validAnagram('anagram', 'agaranm')
 * Good for...
   * Array, string, linked lists (linear structures)
 
-Problem: return the two values in an array that sum to zero, else return false
+Problem: return the two values in an array that sum to zero
 
-brute force solution... BigO; Time: O(n^2), Space: O(1)
+Brute force - BigO; Time: O(n^2), Space: O(1)
 ```
 function sumZero(array){
   for(let i = 0; i < array.length; i++){
@@ -173,7 +173,7 @@ function sumZero(array){
 }
 sumZero([-2,-1,0,1,2])
 ```
-Refactored with multiple pointers method... BigO; Time: O(n), Space: O(1)
+Refactored with multiple pointers - BigO; Time: O(n), Space: O(1)
 ```
 function sumZero(array){
   
@@ -197,8 +197,26 @@ function sumZero(array){
 
 sumZero([-4,-3,-2, -1, 0, 1, 2, 3, 4])
 ```
-Count unique values with multiple pointers... BigO; Time: O(n), Space O(n)
+Problem: return number of unique values in array
 
+Brute force - BigO; Time: O(n^2) Space: O(n)
+```
+function uniqueValues(array){
+  let first = 0;
+  let second = first + 1;
+  let count = 0;
+  while (count < array.length - 1){
+    while(array[first] === array[second]){
+      array.splice(array[first], 1)
+    }
+    count++;
+    first++;
+    second = first + 1;
+  }
+  return array.length
+}
+```
+Refactored with multiple pointers - BigO; Time: O(n), Space O(n)
 ```
 function countUniqueValues(array) {
   if(array.length === 0) return 0;
